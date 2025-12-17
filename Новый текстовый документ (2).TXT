@@ -1,0 +1,35 @@
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+    // Настройка для русского языка
+    setlocale(LC_ALL, "Russian");
+    
+    int number;
+    int count = 0; // Счетчик цифр
+    
+    cout << "[+] Введите число: ";
+    cin >> number;
+    
+    // Проверяем, что число положительное
+    if (number <= 0) {
+        cout << "\n[!] Ошибка: число должно быть положительным!\n";
+        return 1; // Завершаем программу с ошибкой
+    }
+    
+    // Сохраняем оригинальное число для вывода
+    int originalNumber = number;
+    
+    // Подсчитываем цифры с помощью цикла while
+    while (number > 0) {
+        count = count + 1;  // Увеличиваем счетчик на 1
+        number = number / 10; // "Отрезаем" последнюю цифру
+    }
+    
+    // Выводим результат
+    cout << "\n[+] Количество цифр: " << count << endl;
+    
+    return 0;
+}
