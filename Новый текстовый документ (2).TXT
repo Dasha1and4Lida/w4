@@ -27,9 +27,10 @@ int main() {
         number = number / 10;
     }
     
-    // Выводим результат
+
     cout << "\n[+] Количество цифр: " << count << endl;
     
     return 0;
 
 }
+
